@@ -8,30 +8,35 @@ class Area(var nbRows: Int, var nbCols: Int) {
     var returnMap = Array.ofDim[Cell.Value](nbRows, nbCols)
 
     def initCell(c: Coord): Unit = {
-      val cellValue = if(incidentWeight < random.nextDouble()) Cell.Incident else Cell.Empty
+      val cellValue = if(random.nextDouble() < incidentWeight) {
+        Cell.Incident
+      } else {
+        Cell.Empty
+      }
       returnMap(c.r)(c.c) = cellValue
     }
 
     var coordCursor = null
 
-    for (row <- 0 until (nbRows-1)) {
-      for (col <- 0 until (nbCols - 1)) {
-        initCell(new Coord(row, col))
+    for (row <- 0 until nbRows) {
+      for (col <- 0 until nbCols) {
+        val coordonnee = new Coord(row, col)
+        initCell(coordonnee)
+        println("initialisation de la cell: " + coordonnee)
       }
     }
     return returnMap
   }
 
   override def toString: String = {
-    var str = null
+    var str: String = ""
 
-    for (row <- 0 until (nbRows-1)) {
-      for (col <- 0 until (nbCols-1)) {
-        str += this.theMap(row)(col)
+    for (row <- 0 until nbRows) {
+      for (col <- 0 until nbCols) {
+        str = str + this.theMap(row)(col) + " "
       }
-      str += "\n"
+      str = str + "\n"
     }
-
     return str
   }
 }
