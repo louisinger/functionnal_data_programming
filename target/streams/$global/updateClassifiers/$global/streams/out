@@ -2370,28 +2370,28 @@
 [debug] == resolving dependencies default#functionnal_data_programming$sources;0.1->jline#jline;2.14.6 [scala-tool->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
-[debug] 	[NOT REQUIRED] net.sf.jopt-simple#jopt-simple;3.2!jopt-simple.jar(src)
+[debug] 	[NOT REQUIRED] org.apache.kafka#kafka_2.11;0.8.2.0!kafka_2.11.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.8!scala-library.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.2!scala-xml_2.11.jar(src)
+[debug] 	[NOT REQUIRED] net.sf.jopt-simple#jopt-simple;3.2!jopt-simple.jar(src)
 [debug] 	[NOT REQUIRED] com.yammer.metrics#metrics-core;2.2.0!metrics-core.jar(src)
 [debug] 	[NOT REQUIRED] io.netty#netty;3.7.0.Final!netty.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;0.9.94!jline.jar(src)
-[debug] 	[NOT REQUIRED] junit#junit;3.8.1!junit.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.2!scala-parser-combinators_2.11.jar(src)
-[debug] 	[NOT REQUIRED] log4j#log4j;1.2.16!log4j.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.2!scala-xml_2.11.jar(src)
+[debug] 	[NOT REQUIRED] org.xerial.snappy#snappy-java;1.1.1.6!snappy-java.jar(src)
 [debug] 	[NOT REQUIRED] org.apache.zookeeper#zookeeper;3.4.6!zookeeper.jar(src)
+[debug] 	[NOT REQUIRED] log4j#log4j;1.2.16!log4j.jar(src)
 [debug] 	[NOT REQUIRED] org.slf4j#slf4j-log4j12;1.6.1!slf4j-log4j12.jar(src)
 [debug] 	[NOT REQUIRED] com.101tec#zkclient;0.3!zkclient.jar(src)
 [debug] 	[NOT REQUIRED] net.jpountz.lz4#lz4;1.2.0!lz4.jar(src)
-[debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.6!slf4j-api.jar(src)
-[debug] 	[NOT REQUIRED] org.apache.kafka#kafka-clients;0.8.2.0!kafka-clients.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.8!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.8!scala-reflect.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar(src)
-[debug] 	[NOT REQUIRED] org.apache.kafka#kafka_2.11;0.8.2.0!kafka_2.11.jar(src)
-[debug] 	[NOT REQUIRED] org.xerial.snappy#snappy-java;1.1.1.6!snappy-java.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.8!scala-compiler.jar(src)
-[debug] :: resolution report :: resolve 727ms :: artifacts dl 43ms
+[debug] 	[NOT REQUIRED] org.apache.kafka#kafka-clients;0.8.2.0!kafka-clients.jar(src)
+[debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.6!slf4j-api.jar(src)
+[debug] 	[NOT REQUIRED] junit#junit;3.8.1!junit.jar(src)
+[debug] :: resolution report :: resolve 350ms :: artifacts dl 15ms
 [debug] 	report for default#functionnal_data_programming$sources;0.1 compile produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-compile.xml
 [debug] 	report for default#functionnal_data_programming$sources;0.1 runtime produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-runtime.xml
 [debug] 	report for default#functionnal_data_programming$sources;0.1 test produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-test.xml
@@ -2403,4 +2403,4 @@
 [debug] 	report for default#functionnal_data_programming$sources;0.1 plugin produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-plugin.xml
 [debug] 	report for default#functionnal_data_programming$sources;0.1 pom produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-pom.xml
 [debug] 	report for default#functionnal_data_programming$sources;0.1 scala-tool produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-scala-tool.xml
-[debug] 	resolve done (727ms resolve - 43ms download)
+[debug] 	resolve done (350ms resolve - 15ms download)
