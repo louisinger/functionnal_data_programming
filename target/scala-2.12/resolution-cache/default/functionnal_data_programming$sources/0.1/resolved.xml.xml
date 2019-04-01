@@ -4,7 +4,7 @@
 		module="functionnal_data_programming$sources"
 		revision="0.1"
 		status="integration"
-		publication="20190329211447"
+		publication="20190401132908"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

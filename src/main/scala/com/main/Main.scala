@@ -5,10 +5,10 @@ import com.model.{Area, Coord, Fleet}
 object Main {
 
   def main(args: Array[String]): Unit = {
-    val area = new Area(20, 20)
-    println(area)
+    var area = new Area(20, 20)
+    println(area.isOnTheMap(new Coord(-3, 5)))
 
-    val myFleet = new Fleet(5)
+    val myFleet = new Fleet(5, area)
     println(myFleet)
   }
 }

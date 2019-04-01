@@ -16,17 +16,34 @@ class Area(var nbRows: Int, var nbCols: Int) {
       returnMap(c.r)(c.c) = cellValue
     }
 
+
     var coordCursor = null
 
     for (row <- 0 until nbRows) {
       for (col <- 0 until nbCols) {
         val coordonnee = new Coord(row, col)
         initCell(coordonnee)
-        println("initialisation de la cell: " + coordonnee)
+        //println("initialisation de la cell: " + coordonnee)
       }
     }
     return returnMap
   }
+
+  def isOnTheMap(coord: Coord): Boolean = try {this.theMap(coord.r)(coord.c) != null} catch {case e:Exception => false}
+
+  def nearestCells(coord: Coord): List[Coord] = {
+    var returnCoords: List[Coord] = List()
+    val modifiers = List((1, 0), (-1, 0), (0, 1), (0, -1), (-1, -1), (1, 1), (-1, 1), (1, -1))
+    modifiers.foreach {
+      modifier => {
+        val (dr, dc) = modifier
+        var newCoord = new Coord(coord.r + dr, coord.c + dc)
+        if(isOnTheMap(newCoord)) {returnCoords = newCoord :: returnCoords}
+      }
+    }
+    return returnCoords
+  }
+
 
   override def toString: String = {
     var str: String = ""
