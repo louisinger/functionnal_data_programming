@@ -10,5 +10,7 @@ object Main {
 
     val myFleet = new Fleet(5, area)
     println(myFleet)
+    println("Test pour la coordonnée: (0,4): " + area.nearestCells(new Coord(0, 4)))
+    println("Test pour la coordonnée: (10,3): " + area.nearestCells(new Coord(10, 3)))
   }
 }

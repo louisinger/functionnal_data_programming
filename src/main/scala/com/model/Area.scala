@@ -33,6 +33,9 @@ class Area(var nbRows: Int, var nbCols: Int) {
 
   def nearestCells(coord: Coord): List[Coord] = {
     var returnCoords: List[Coord] = List()
+    // On vérifie d'abord que la coord est bien sur la map
+    if (!isOnTheMap(coord)) return returnCoords
+    // Si c'est le cas, on calcule les cells adjacentes
     val modifiers = List((1, 0), (-1, 0), (0, 1), (0, -1), (-1, -1), (1, 1), (-1, 1), (1, -1))
     modifiers.foreach {
       modifier => {
