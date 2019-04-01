@@ -1,6 +1,6 @@
 package com.model
 
-class Fleet(val numberOfDrone:Int, var area: Area) {
+class Fleet(val numberOfDrone:Int, val area: Area) {
   var visitedCells: List[Coord] = List()
   val drones = initFleet
 
@@ -21,9 +21,15 @@ class Fleet(val numberOfDrone:Int, var area: Area) {
   private def initFleet: Array[Drone] = {
     var returnDrones = new Array[Drone](numberOfDrone)
     for(i <- 0 until numberOfDrone) {
-      returnDrones(i) = new Drone("FL" + i, getRandomCoord)
+      returnDrones(i) = new Drone("FL" + i, area ,getRandomCoord)
     }
     return returnDrones
+  }
+
+  def doTurn: Unit = {
+    drones.foreach(drone => {
+      println(drone.action)
+    })
   }
 
   override def toString: String = {

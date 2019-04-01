@@ -29,6 +29,8 @@ class Area(var nbRows: Int, var nbCols: Int) {
     return returnMap
   }
 
+  def incidentAt(coord: Coord): Boolean = try {if(this.theMap(coord.r)(coord.c) == Cell.Incident) true else false} catch {case e:Exception => false}
+
   def isOnTheMap(coord: Coord): Boolean = try {this.theMap(coord.r)(coord.c) != null} catch {case e:Exception => false}
 
   def nearestCells(coord: Coord): List[Coord] = {
