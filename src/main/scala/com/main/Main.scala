@@ -1,15 +1,14 @@
 package com.main
 
 import com.model.{Area, Coord, Fleet, Simulation}
+import java.util.Properties
+import org.apache.kafka.clients.producer.ProducerConfig
 
 object Main {
 
   def main(args: Array[String]): Unit = {
     val area = new Area(20, 20)
-    println(area.isOnTheMap(new Coord(-3, 5)))
-
-    val simulation = new Simulation(3, area, 20)
-
+    val simulation = new Simulation(3, area, 50)
     simulation.launch()
   }
 

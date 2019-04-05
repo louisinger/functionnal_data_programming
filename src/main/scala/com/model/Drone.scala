@@ -3,7 +3,7 @@ package com.model
 class Drone(val name: String, val area: Area, var position: Coord) {
   var currentState: State.Value = State.Surveil
 
-  def initPosition(initialRow: Int, initialCol: Int) = {
+  def initPosition(initialRow: Int, initialCol: Int): Unit = {
     position = new Coord(initialRow, initialCol)
   }
 
@@ -34,8 +34,8 @@ class Drone(val name: String, val area: Area, var position: Coord) {
   }
 
   override def toString: String = {
-    var str: String = "Drone: " + name + " | pos: " + position + " | state: " + currentState
-    return str
+    val str: String = "Drone: " + name + " | pos: " + position + " | state: " + currentState
+    str
   }
 
 

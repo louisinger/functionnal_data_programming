@@ -1,8 +1,20 @@
 package com.model
 
+import java.util.Properties
+
+import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord, RecordMetadata}
+import org.apache.kafka.common.serialization.StringSerializer
+
 class Fleet(val numberOfDrone:Int, val area: Area) {
+
+  val props = new Properties()
+  props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
+  props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer])
+  props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer])
+
   var visitedCells: List[Coord] = List()
-  val drones = initFleet
+  val drones: Array[Drone] = initFleet
+  val producer = new KafkaProducer[String, String](props)
 
 
   private def isVisited(coord: Coord): Boolean = visitedCells.contains(coord)
@@ -23,12 +35,19 @@ class Fleet(val numberOfDrone:Int, val area: Area) {
     for(i <- 0 until numberOfDrone) {
       returnDrones(i) = new Drone("FL" + i, area ,getRandomCoord)
     }
-    return returnDrones
+    returnDrones
   }
 
-  def doTurn: Unit = {
+  def doTurn(): Unit = {
     drones.foreach(drone => {
-      println(drone.action)
+      val message = new ProducerRecord[String, String]("main", null, drone.action)
+      producer.send(message, (recordMetadata: RecordMetadata, exception: Exception) => {
+        if(exception != null) {
+          exception.printStackTrace()
+        } else {
+          println(s"Metadata about the sent record: $recordMetadata")
+        }
+      })
     })
   }
 
@@ -38,6 +57,7 @@ class Fleet(val numberOfDrone:Int, val area: Area) {
       str = str + drones(i) + "\n"
     }
     str = str + "visitedCells: " + visitedCells
-    return str
+    str
   }
+
 }
