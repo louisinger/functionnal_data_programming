@@ -2,6 +2,8 @@ package com.model
 
 import java.util.Properties
 
+import com.serializer.MessageSerializer
+
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord, RecordMetadata}
 import org.apache.kafka.common.serialization.StringSerializer
 
@@ -9,12 +11,12 @@ class Fleet(val numberOfDrone:Int, val area: Area) {
 
   val props = new Properties()
   props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
-  props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer])
-  props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer])
+  props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, classOf[MessageSerializer])
+  props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[MessageSerializer])
 
   var visitedCells: List[Coord] = List()
   val drones: Array[Drone] = initFleet
-  val producer = new KafkaProducer[String, String](props)
+  val producer = new KafkaProducer[String, Message](props)
 
 
   private def isVisited(coord: Coord): Boolean = visitedCells.contains(coord)
@@ -40,7 +42,7 @@ class Fleet(val numberOfDrone:Int, val area: Area) {
 
   def doTurn(): Unit = {
     drones.foreach(drone => {
-      val message = new ProducerRecord[String, String]("main", null, drone.action)
+      val message = new ProducerRecord[String, Message]("main", null, drone.action)
       producer.send(message, (recordMetadata: RecordMetadata, exception: Exception) => {
         if(exception != null) {
           exception.printStackTrace()

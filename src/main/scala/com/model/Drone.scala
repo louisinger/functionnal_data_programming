@@ -15,12 +15,12 @@ class Drone(val name: String, val area: Area, var position: Coord) {
     position.move(dr, dc)
   }
 
-  def action: String = {
+  def action: Message = {
     currentState match {
-      case State.Rest => "The drone " + name + " is resting."
+      case State.Rest => new Message(name, "The drone " + name + " is resting.", false)
       case State.Alert => {
         currentState = State.Surveil
-        "The drone " + name + " signals an incident at " + position
+        new Message(name, "The drone " + name + " signals an incident at " + position, true)
       }
       case State.Surveil => {
         val rand = scala.util.Random
@@ -28,7 +28,7 @@ class Drone(val name: String, val area: Area, var position: Coord) {
         val str = "The drone " + name + " moves from " + position + " to "
         position = cells(rand.nextInt(cells.length))
         if(area.incidentAt(position)) currentState = State.Alert
-        str + position
+        new Message(name, str + position, false)
       }
     }
   }

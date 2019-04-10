@@ -2,4 +2,4 @@ name := "functionnal_data_programming"
 version := "0.1"
 scalaVersion := "2.12.8"
 libraryDependencies += "org.apache.kafka" % "kafka-clients" % "2.1.0"
-
+libraryDependencies += "com.fasterxml.jackson.module" % "jackson-module-scala" % "2.0.2"
