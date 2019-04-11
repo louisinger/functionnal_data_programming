@@ -1,6 +1,6 @@
 package com.model
 
-class Drone(val name: String, val area: Area, var position: Coord) {
+class Drone(val fleet: Fleet, val name: String, val area: Area, var position: Coord) {
   var currentState: State.Value = State.Surveil
 
   def initPosition(initialRow: Int, initialCol: Int): Unit = {
@@ -17,10 +17,10 @@ class Drone(val name: String, val area: Area, var position: Coord) {
 
   def action: Message = {
     currentState match {
-      case State.Rest => new Message(name, "The drone " + name + " is resting.", false)
+      case State.Rest => new Message(fleet.simulationName, name, "The drone " + name + " is resting.", false)
       case State.Alert => {
         currentState = State.Surveil
-        new Message(name, "The drone " + name + " signals an incident at " + position, true)
+        new Message(fleet.simulationName, name, "The drone " + name + " signals an incident at " + position, true)
       }
       case State.Surveil => {
         val rand = scala.util.Random
@@ -28,7 +28,7 @@ class Drone(val name: String, val area: Area, var position: Coord) {
         val str = "The drone " + name + " moves from " + position + " to "
         position = cells(rand.nextInt(cells.length))
         if(area.incidentAt(position)) currentState = State.Alert
-        new Message(name, str + position, false)
+        new Message(fleet.simulationName, name, str + position, false)
       }
     }
   }

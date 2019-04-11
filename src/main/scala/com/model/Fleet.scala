@@ -7,7 +7,7 @@ import com.serializer.MessageSerializer
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord, RecordMetadata}
 import org.apache.kafka.common.serialization.StringSerializer
 
-class Fleet(val numberOfDrone:Int, val area: Area) {
+class Fleet(val simulationName: String, val numberOfDrone:Int, val area: Area) {
 
   val props = new Properties()
   props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
@@ -35,7 +35,7 @@ class Fleet(val numberOfDrone:Int, val area: Area) {
   private def initFleet: Array[Drone] = {
     var returnDrones = new Array[Drone](numberOfDrone)
     for(i <- 0 until numberOfDrone) {
-      returnDrones(i) = new Drone("FL" + i, area ,getRandomCoord)
+      returnDrones(i) = new Drone(this, "FL" + i, area ,getRandomCoord)
     }
     returnDrones
   }

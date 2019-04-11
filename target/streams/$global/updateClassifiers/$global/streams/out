@@ -1939,23 +1939,23 @@
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-annotations;2.0.2!jackson-annotations.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.8!scala-library.jar(src)
-[debug] 	[NOT REQUIRED] org.xerial.snappy#snappy-java;1.1.7.2!snappy-java.jar(src)
+[debug] 	[NOT REQUIRED] com.github.luben#zstd-jni;1.3.5-4!zstd-jni.jar(src)
 [debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-databind;2.0.2!jackson-databind.jar(src)
-[debug] 	[NOT REQUIRED] org.scalastuff#scalabeans;0.2!scalabeans.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.8!scala-library.jar(src)
 [debug] 	[NOT REQUIRED] com.google.guava#guava;r09!guava.jar(src)
 [debug] 	[NOT REQUIRED] com.fasterxml.jackson.module#jackson-module-scala;2.0.2!jackson-module-scala.jar(src)
-[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.0.2!jackson-core.jar(src)
 [debug] 	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.25!slf4j-api.jar(src)
 [debug] 	[NOT REQUIRED] org.apache.kafka#kafka-clients;2.1.0!kafka-clients.jar(src)
 [debug] 	[NOT REQUIRED] org.lz4#lz4-java;1.5.0!lz4-java.jar(src)
-[debug] 	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.3!paranamer.jar(src)
-[debug] 	[NOT REQUIRED] com.github.luben#zstd-jni;1.3.5-4!zstd-jni.jar(src)
-[debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.8!scala-reflect.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.8!scala-compiler.jar(src)
+[debug] 	[NOT REQUIRED] com.fasterxml.jackson.core#jackson-core;2.0.2!jackson-core.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
-[debug] :: resolution report :: resolve 140ms :: artifacts dl 14ms
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.8!scala-reflect.jar(src)
+[debug] 	[NOT REQUIRED] org.scalastuff#scalabeans;0.2!scalabeans.jar(src)
+[debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar(src)
+[debug] 	[NOT REQUIRED] com.thoughtworks.paranamer#paranamer;2.3!paranamer.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.8!scala-compiler.jar(src)
+[debug] 	[NOT REQUIRED] org.xerial.snappy#snappy-java;1.1.7.2!snappy-java.jar(src)
+[debug] :: resolution report :: resolve 297ms :: artifacts dl 10ms
 [debug] 	report for default#functionnal_data_programming$sources;0.1 compile produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-compile.xml
 [debug] 	report for default#functionnal_data_programming$sources;0.1 runtime produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-runtime.xml
 [debug] 	report for default#functionnal_data_programming$sources;0.1 test produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-test.xml
@@ -1967,4 +1967,4 @@
 [debug] 	report for default#functionnal_data_programming$sources;0.1 plugin produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-plugin.xml
 [debug] 	report for default#functionnal_data_programming$sources;0.1 pom produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-pom.xml
 [debug] 	report for default#functionnal_data_programming$sources;0.1 scala-tool produced in /home/louisinger/code/functionnal_data_programming/target/scala-2.12/resolution-cache/reports/default-functionnal_data_programming$sources-scala-tool.xml
-[debug] 	resolve done (140ms resolve - 14ms download)
+[debug] 	resolve done (297ms resolve - 10ms download)
